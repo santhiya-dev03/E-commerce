@@ -73,11 +73,22 @@
         </div>
     </main>
 
-    <script>
+    <script type="module">
+        import Auth from './js/auth.js';
+        Auth.init();
+
         document.getElementById('login-form').onsubmit = (e) => {
             e.preventDefault();
-            alert('Welcome to Serene! You have successfully logged in.');
-            window.location.href = 'index.html';
+            const email = e.target.querySelector('input[type="email"]').value;
+            const pass = e.target.querySelector('input[type="password"]').value;
+
+            const result = Auth.login(email, pass);
+            if (result.success) {
+                alert(`Welcome back, ${result.user.name}!`);
+                window.location.href = 'index.html';
+            } else {
+                alert(result.message);
+            }
         };
     </script>
 </body>

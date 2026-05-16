@@ -82,10 +82,19 @@ img { max-width: 100%; display: block; }
     color: var(--primary);
 }
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+.user-greeting {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+#logout-btn {
+    padding: 0;
+    color: var(--text-muted);
+}
+
+#logout-btn:hover {
+    color: var(--accent);
 }
 
 .cart-btn {

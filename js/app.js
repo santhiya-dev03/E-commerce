@@ -2,6 +2,7 @@ import products from './products.js';
 import Cart from './cart.js';
 import Wishlist from './wishlist.js';
 import Filter from './filter.js';
+import Auth from './auth.js';
 
 const App = {
     state: {
@@ -17,11 +18,25 @@ const App = {
     },
 
     init() {
+        Auth.init();
         this.renderProducts(products);
         this.setupEventListeners();
         this.updateCartBadge();
         this.renderCart();
         this.renderCategories();
+        this.updateUserUI();
+    },
+
+    updateUserUI() {
+        const user = Auth.getCurrentUser();
+        const authContainer = document.getElementById('auth-links');
+        if (user && authContainer) {
+            authContainer.innerHTML = `
+                <span class="user-greeting">Hi, ${user.name.split(' ')[0]}</span>
+                <button id="logout-btn" class="nav-link"><i class="fas fa-sign-out-alt"></i></button>
+            `;
+            document.getElementById('logout-btn').onclick = () => Auth.logout();
+        }
     },
 
     renderProducts(data) {

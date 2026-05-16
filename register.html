@@ -82,11 +82,24 @@
         </div>
     </main>
 
-    <script>
+    <script type="module">
+        import Auth from './js/auth.js';
+        Auth.init();
+
         document.getElementById('register-form').onsubmit = (e) => {
             e.preventDefault();
-            alert('Welcome to the Serene community! Your account has been created.');
-            window.location.href = 'index.html';
+            const firstName = e.target.querySelectorAll('input')[0].value;
+            const lastName = e.target.querySelectorAll('input')[1].value;
+            const email = e.target.querySelectorAll('input')[2].value;
+            const pass = e.target.querySelectorAll('input')[3].value;
+
+            const result = Auth.register(`${firstName} ${lastName}`, email, pass);
+            if (result.success) {
+                alert(`Welcome to the community, ${firstName}!`);
+                window.location.href = 'index.html';
+            } else {
+                alert(result.message);
+            }
         };
     </script>
 </body>
