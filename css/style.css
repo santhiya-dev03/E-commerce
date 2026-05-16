@@ -143,6 +143,7 @@ img { max-width: 100%; display: block; }
     letter-spacing: -2px;
     background: linear-gradient(to right, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
