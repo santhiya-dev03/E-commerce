@@ -49,7 +49,6 @@ This project is a modern e-commerce solution that handles everything from produc
    SUPABASE_URL=your_supabase_project_url
    SUPABASE_ANON_KEY=your_supabase_anon_key
    JWT_SECRET=your_jwt_secret_key
-   PORT=3000
    ```
 
 4. **Database Setup**
@@ -59,7 +58,7 @@ This project is a modern e-commerce solution that handles everything from produc
    ```bash
    node server.js
    ```
-   The server will be running at `http://localhost:3000`.
+   The server will be running on the dynamically assigned port.
 
 ## 📂 Project Structure
 - `/controllers`: Backend logic for handling API requests.
