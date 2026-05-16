@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | Nexus Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="glass">
+        <a href="/" class="logo">NEXUS</a>
+    </nav>
+
+    <main style="text-align: center; margin-top: 6rem;">
+        <div style="background: var(--success); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+            <span style="font-size: 2.5rem; color: white;">✓</span>
+        </div>
+        <h1>Order Confirmed!</h1>
+        <p style="color: var(--text-muted); margin: 1rem 0 2rem;">Thank you for your purchase. Your order is being processed.</p>
+        <p>Order ID: <span id="order-id" style="font-weight: 700; color: var(--primary);"></span></p>
+        
+        <div style="margin-top: 3rem;">
+            <a href="/" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('order-id').textContent = urlParams.get('id');
+    </script>
+</body>
+</html>
