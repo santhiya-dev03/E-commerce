@@ -44,6 +44,7 @@ const Cart = {
     clear() {
         this.items = [];
         this.save();
+    }
 };
 
 export default Cart;
