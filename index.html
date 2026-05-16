@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERENE | Premium Tech Store</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3659/3659899.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="description" content="Serene is a premium tech store offering the best minimalist gadgets and accessories for your digital life.">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-circle-notch fa-spin-slow"></i>
+            SERENE
+        </a>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#store" class="nav-link">Shop</a>
+            <a href="#trending" class="nav-link">Trending</a>
+        </div>
+        <div class="nav-actions">
+            <div id="auth-links">
+                <a href="login.html" class="nav-link"><i class="far fa-user"></i> Login</a>
+            </div>
+            <button class="cart-btn" id="cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <span class="badge new" style="margin-bottom: 1rem;">Limited Edition Zenith Pro is here</span>
+        <h1>Experience Tech <br>In Harmony.</h1>
+        <p>A curated collection of minimalist, premium gadgets designed to elevate your workspace and daily life.</p>
+        <div class="hero-actions">
+            <a href="#store" class="btn btn-primary">Browse Collection <i class="fas fa-arrow-right"></i></a>
+            <a href="register.html" class="btn btn-outline">Join Exclusive Access</a>
+        </div>
+    </header>
+
+    <!-- Categories Tab -->
+    <div style="padding: 40px 5% 0; max-width: 1440px; margin: 0 auto;">
+        <div class="category-tabs" id="category-tabs">
+            <!-- Dynamically rendered categories -->
+        </div>
+    </div>
+
+    <!-- Main Store Section -->
+    <main class="store-container" id="store">
+        <!-- Sidebar Filters -->
+        <aside class="filters-sidebar">
+            <div class="filter-group">
+                <h4>Search Products</h4>
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="Search tech...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Sort By</h4>
+                <select id="sort-select" class="btn btn-outline" style="width: 100%; text-align: left; padding: 10px;">
+                    <option value="newest">Newest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Best Rated</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <input type="range" id="price-range" min="0" max="100000" step="1000" value="100000">
+                <span class="price-display" id="price-value">Up to ₹1,00,000</span>
+            </div>
+
+            <div class="filter-group">
+                <h4>Availability</h4>
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" id="stock-only" style="width: 18px; height: 18px; accent-color: var(--primary);">
+                    In Stock Only
+                </label>
+            </div>
+        </aside>
+
+        <!-- Product Grid Container -->
+        <section class="products-main">
+            <div id="product-grid" class="product-grid">
+                <!-- Products dynamically rendered by app.js -->
+                <div class="loading">Refining the best for you...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section style="background: #0f172a; color: white; padding: 100px 5%; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Join the Inner Circle</h2>
+        <p style="color: #94a3b8; margin-bottom: 2rem; max-width: 500px; margin-inline: auto;">Get exclusive access to early product launches and curated tech news delivered to your inbox.</p>
+        <form style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto;" onsubmit="event.preventDefault(); alert('Welcome to Serene!')">
+            <input type="email" placeholder="Enter your email" style="flex: 1; padding: 15px; border-radius: 8px; border: none; outline: none;">
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 80px 5% 40px; background: white; border-top: 1px solid var(--border);">
+        <div style="max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 60px;">
+            <div>
+                <a href="#" class="logo" style="margin-bottom: 20px;">SERENE</a>
+                <p style="color: var(--text-muted);">Curating the world's most elegant tech gear for people who appreciate minimalism and performance.</p>
+                <div style="display: flex; gap: 15px; margin-top: 20px;">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px;">Shop Categories</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted);">
+                    <li>New Arrivals</li>
+                    <li>Best Sellers</li>
+                    <li>Tech Accessories</li>
+                    <li>Audio Gear</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px;">Experience</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted);">
+                    <li>Brand Story</li>
+                    <li>Journal</li>
+                    <li>Store Locator</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 20px;">Company</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted);">
+                    <li>Sustainability</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                    <li>Cookies</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 30px;">
+            <p>&copy; 2026 SERENE. All Rights Reserved. Crafted with <i class="fas fa-heart" style="color: var(--accent);"></i> for Tech Lovers.</p>
+        </div>
+    </footer>
+
+    <!-- Modals & Overlays -->
+    <div class="modal-overlay" id="overlay"></div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal" id="product-modal">
+        <button class="close-modal"><i class="fas fa-times"></i></button>
+        <div class="modal-image-container" style="background: #f8fafc; display: flex; align-items: center; justify-content: center;">
+            <img src="" alt="" class="modal-image" style="max-height: 400px; object-fit: contain;">
+        </div>
+        <div class="modal-content">
+            <h2 class="modal-title" style="font-size: 2rem; margin-bottom: 10px;">Product Title</h2>
+            <div class="modal-rating" style="margin-bottom: 15px;"></div>
+            <div class="product-price" style="margin-bottom: 20px;">
+                <span class="modal-price current-price" style="font-size: 1.5rem;">₹0</span>
+                <span class="modal-old-price old-price">₹0</span>
+            </div>
+            <p class="modal-description" style="color: var(--text-muted); margin-bottom: 30px;">Description goes here...</p>
+            <div class="modal-meta" style="margin-bottom: 30px; font-size: 0.9rem; font-weight: 600;">
+                <span class="modal-stock">In Stock</span>
+            </div>
+            <button class="btn btn-primary modal-add-btn" style="width: 100%; justify-content: center;">Add to Cart</button>
+            
+            <div style="margin-top: 40px;">
+                <h4 style="margin-bottom: 15px;">Related Essentials</h4>
+                <div class="related-products" id="related-products" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                    <!-- Related items -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Bag</h3>
+            <button id="close-cart" style="font-size: 1.5rem;"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items dynamically rendered -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Subtotal</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Taxes and shipping calculated at checkout.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 18px;" onclick="alert('Proceeding to secure checkout...')">Checkout Securely</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+    <script>
+        // Navbar transparency on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>
