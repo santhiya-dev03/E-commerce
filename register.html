@@ -84,6 +84,7 @@
 
     <script type="module">
         import Auth from './js/auth.js';
+        import UI from './js/ui.js';
         Auth.init();
 
         document.getElementById('register-form').onsubmit = (e) => {
@@ -95,10 +96,10 @@
 
             const result = Auth.register(`${firstName} ${lastName}`, email, pass);
             if (result.success) {
-                alert(`Welcome to the community, ${firstName}!`);
-                window.location.href = 'index.html';
+                UI.showToast(`Welcome to the community, ${firstName}!`);
+                setTimeout(() => window.location.href = 'index.html', 1500);
             } else {
-                alert(result.message);
+                UI.showToast(result.message, 'error');
             }
         };
     </script>

@@ -3,6 +3,7 @@ import Cart from './cart.js';
 import Wishlist from './wishlist.js';
 import Filter from './filter.js';
 import Auth from './auth.js';
+import UI from './ui.js';
 
 const App = {
     state: {
@@ -214,6 +215,24 @@ const App = {
             overlay.classList.remove('active');
             document.getElementById('product-modal').classList.remove('active');
         };
+
+        // Newsletter
+        const newsletterForm = document.getElementById('newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.onsubmit = (e) => {
+                e.preventDefault();
+                UI.showToast('Welcome to the Serene Inner Circle!');
+                newsletterForm.reset();
+            };
+        }
+
+        // Checkout
+        const checkoutBtn = document.getElementById('checkout-btn');
+        if (checkoutBtn) {
+            checkoutBtn.onclick = () => {
+                UI.showToast('Proceeding to secure checkout...', 'info');
+            };
+        }
 
         // Listen for data updates
         document.addEventListener('cartUpdated', () => {

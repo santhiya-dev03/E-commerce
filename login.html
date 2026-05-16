@@ -75,6 +75,7 @@
 
     <script type="module">
         import Auth from './js/auth.js';
+        import UI from './js/ui.js';
         Auth.init();
 
         document.getElementById('login-form').onsubmit = (e) => {
@@ -84,10 +85,10 @@
 
             const result = Auth.login(email, pass);
             if (result.success) {
-                alert(`Welcome back, ${result.user.name}!`);
-                window.location.href = 'index.html';
+                UI.showToast(`Welcome back, ${result.user.name}!`);
+                setTimeout(() => window.location.href = 'index.html', 1500);
             } else {
-                alert(result.message);
+                UI.showToast(result.message, 'error');
             }
         };
     </script>

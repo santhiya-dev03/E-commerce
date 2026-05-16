@@ -1,3 +1,5 @@
+import UI from './ui.js';
+
 const Cart = {
     items: JSON.parse(localStorage.getItem('serene_cart')) || [],
 
@@ -9,7 +11,7 @@ const Cart = {
             this.items.push({ ...product, quantity: 1 });
         }
         this.save();
-        this.notify('Added to cart');
+        UI.showToast('Added to cart');
     },
 
     remove(id) {
@@ -42,15 +44,6 @@ const Cart = {
     clear() {
         this.items = [];
         this.save();
-    },
-
-    notify(message) {
-        const toast = document.createElement('div');
-        toast.className = 'toast show';
-        toast.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 3000);
-    }
 };
 
 export default Cart;
