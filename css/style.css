@@ -97,6 +97,18 @@ img { max-width: 100%; display: block; }
     color: var(--accent);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Further increased for premium feel */
+}
+
+#auth-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .cart-btn {
     position: relative;
     font-size: 1.2rem;
